@@ -1,0 +1,102 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    width: 100%;
+    height:100vh;
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url('https://www.nodemy.vn/projects/html-css-js/weather-app/hot.png') no-repeat center/cover;
+    position:relative;
+}   
+.weather{
+    min-height: 600px;
+    width: 352px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 30px 20px;
+    background: url('https://www.nodemy.vn/projects/html-css-js/weather-app/hot.png') no-repeat center/cover;
+}
+.weather .search{
+    width:98%;
+    height:30px;
+    padding:22px 10px;
+    background:rgba(0 , 0 , 0 , 0.3);
+    border-top-right-radius: 15px ;
+    border-bottom-left-radius: 15px ;
+    border:none;
+    outline:none;
+    box-shadow: 0px 5px 22px rgb(217, 206, 206);
+    font-size:25px;
+    animation-direction:alternate;
+    animation-duration:0.5s;
+}
+.weather .search:focus{
+    border-top-left-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    border-top-right-radius: 0px ;
+    border-bottom-left-radius: 0px;
+    transition-duration:0.5s;   
+}
+.content {
+    text-align: center;
+    margin:25px 0px;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.content .capital {
+    font-size:44px;
+    text-shadow: 4px 4px  rgba(0 , 0 , 0 , 0.5);
+    font-weight:600;
+  }
+.content .name {
+  font-size:37px;
+  text-shadow: 4px 4px  rgba(0 , 0 , 0 , 0.5);
+  font-weight:600;
+}
+.time{
+    margin-top:7px;
+}
+.temperature{
+    width:238px;
+    height:148px;
+    box-shadow: 4px 4px rgba(0 , 0 , 0 , 0.5);
+    background: rgba(238, 231, 231,0.3);
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:13px;
+    font-size:70px;
+    font-weight:800;
+    text-shadow: 3px 3px rgba(14, 12, 12, 0.7);
+}
+
+.short_description{
+    margin-top:30px;
+    font-size:50px;
+    font-weight:800;
+}
+.more_description {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+.more_description > div{
+    display:flex;
+    flex-direction: column-reverse;
+    margin-top:30px;
+}
+.more_description span{
+    margin-top:18px;
+}
+.hidden{
+    display:none
+    
+}
