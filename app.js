@@ -8,8 +8,12 @@ var tagvisibility = document.querySelector('.visibility span')
 var tagshort_nav_description = document.querySelector('.short_nav_description')
 var tagspeed = document.querySelector('.speed span')
 var taghumidity = document.querySelector('.humidity span')
+var taggust = document.querySelector('.gust span')
+var tagdeg = document.querySelector('.deg span')
 var tagcontent = document.querySelector('.content')
-console.log(tagcontent)
+var tagweather1 = document.querySelector('.body .weather')
+var tagbody1 = document.querySelector('body')
+console.log(taggust)
 taginput.addEventListener('keydown',function(e){
     if(e.key == 'Enter'){
      tagnamedescript = e.target.value
@@ -26,10 +30,16 @@ async function changeApi(){
             tagname.innerHTML = myapi.name
             tagcapital.innerHTML = myapi.sys.country
             // chuyển độ k sang độ c -273.15
-            tagtemperature.textContent = Math.round((myapi.main.temp - 273.15))
+            tagtemperature.textContent = Math.round((myapi.main.temp - 273.15)) + '°C'
+            if((myapi.main.temp - 273.15) <= 20 ){
+                tagweather1.classList.add('winter')
+                tagbody1.classList.add('winter')
+            }
             tagshortdescription.innerHTML = myapi.weather[0].main
             tagvisibility.innerHTML = myapi.visibility + 'm'
             tagshort_nav_description.innerHTML = myapi.weather[0].description
+            tagdeg.innerHTML = myapi.wind.deg + '°'
+            taggust.innerHTML = myapi.wind.gust
             // tim dùng Date trong js
             tagtime.innerHTML = new Date().toLocaleString()
             tagspeed.innerHTML = myapi.wind.speed + 'm/s'

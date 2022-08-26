@@ -98,5 +98,11 @@ body{
 }
 .hidden{
     display:none
-    
+}
+.winter{
+    background-image: url(winter.jpg);
+}
+.deg .icon_deg{
+    background-color: #fff;
+    cursor:pointer;
 }
